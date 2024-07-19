@@ -1,84 +1,483 @@
-html {
-    box-sizing: border-box;
-    font-size: 16px;
-} 
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+
+*{
     margin: 0;
     padding: 0;
-    font-weight: normal;
-}
-
-body{
-    background-color: black;
-}
-body {
     box-sizing: border-box;
-    font-size: 16px;
-    margin: 0;
-    padding: 0;
-    font-weight: normal;
-    background-color: black;
 }
 
-#happy, #newyear {
+.spin-icon{
+    font-size: 20px;
+    vertical-align: middle;
+}
+
+.body{
+    font-family: 'Comfortaa', cursive;
+    background-color: rgb(255,255,255,0.9);
+}
+
+bottom{
+    color: rgb(0,0,0,0.9);
+}
+
+.title{
     position: absolute;
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 0 50px #974E9E;
-    z-index: 1;
+    top: 15px;
+    background-color: rgb(231, 76, 60,0.8);
+    width: 130px;
+    height: 30px;
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+    box-shadow: 3px 5px 5px rgb(0,0,0,0.7);
+    transition: 0.3s;
+    animation-name: left;
+    animation-duration: 1.5s;
 }
 
-#happy {
-    top: 40%; /* Đặt vị trí ở trên */
-    left: 50%;
-    transform: translateX(-50%); /* Dịch chuyển ngang */
-    font-family: 'Marck Script', cursive;
-    font-size: 36px; /* Giảm kích thước chữ để phù hợp với màn hình */
-    letter-spacing: 6px;
+.title-p1{
+    font-family: 'Bungee', cursive;
+    font-size: 18px;
+    color: rgb(255,255,255,0.9);
+    margin-left: 5px;
+    text-shadow: 2px 5px 5px rgb(0,0,0,0.3);
 }
 
-#newyear {
-    text-align: center;
-    color: #fff;
-    text-shadow: 0 0 50px #974E9E;
-    z-index: 1;
+.title-right{
     position: absolute;
-    top: 70%;
-    left: 50%;
-    transform: translateX(-50%);
-}
-#newyear h5 {
-    font-size: 24px;
-    letter-spacing: 2px;
+    font-family: 'Bungee', cursive;
+    color: rgb(255,255,255,0.7);
+    font-size: 30px;
+    top: 0px;
+    right: 7px;
+    text-align: right;
 }
 
-#happy:after,#newyear:after{
-    content: attr(data-text);
+.tr-p2{
     position: absolute;
-    top: 0; 
-    left: 0;
-    z-index: -1;
-    text-align: center;
-    color:#974E9E;
-    filter: blur(30px);
-} 
-
-#happy:after{
-    font-size: 108px;
+    top: 30px;
+    right: 7px;
 }
-#happy:before{
-    content:'';
+
+.tr-p3{
     position: absolute;
-    top: 0; 
-    left: 0;
+    top: 60px;
+    right: 7px;
+}
+
+
+.img-bg{
+    background: linear-gradient(to bottom,rgb(0,0,0,0.0),rgb(0,0,0,0.5)),
+    url(img/bg-img.jpeg) center/cover;
+    height: 240px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    animation-name: bottom;
+    animation-duration: 1.5s;
+    animation-name: bottoms;
+    animation-duration: 1.5s;
+}
+
+
+
+.img-pr{
+    width: 170px;
+    height: 170px;
+    border-radius: 99px;
+    position: absolute;
+    top: 150px;
+    left: 30%;
+    border: 7px solid rgb(255,255,255,0.9);
+    transition: 0.3s;
+    animation-name: bottoms;
+    animation-duration: 2s;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+.name{
+
+    margin-top: 60px;
+    position: relative;
     width: 100%;
-    height: 100%;
-    background: #804286;
-    z-index: -2;
-    opacity: 0.5;
-    filter: blur(50px);
+    height: 80px;
+    padding: 10px;
 }
 
-#newyear:after{
-    font-size: 120px;
+
+
+.full-name{
+    position: absolute;
+    font-family: 'Square Peg', cursive;
+    color: rgb(231, 76, 60,0.9);
+    font-weight: 600;
+    font-size: 33px;
+    text-shadow: 2px 3px 3px rgb(0,0,0,0.2);
+    top: 0px;
+    left: 10px;
+    z-index: 1;
+    animation-name: left;
+    animation-duration: 2.5s;
+}
+
+.nick-name{
+    color: rgb(0,0,0,0.7);
+    font-family: 'Bungee', cursive;
+    position: absolute;
+    font-size: 45px;
+    top: -3px;
+    left: 7px;
+    text-shadow: 2px 3px 3px rgb(0,0,0,0.2);
+    animation-name: left;
+    animation-duration: 1.5s;
+}
+
+
+.number{
+    color: rgb(0,0,0,0.6);
+    font-size: 17px;
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    font-weight: 600;
+    animation-name: right;
+    animation-duration: 1.5s;
+    text-shadow: 2px 3px 3px rgb(0,0,0,0.2);
+}
+
+.number i{
+    font-size: 27px;
+    vertical-align: middle;
+}
+
+.bt-baner{
+ 
+    width: 100%;
+    padding: 10px 10px 15px;
+    animation-name: right;
+    animation-duration: 1.5s;
+}
+
+.contact-bt , .follow-bt{
+    box-shadow: 2px 3px 3px rgb(0,0,0,0.2);
+    font-family: 'Comfortaa', cursive;
+    width: 230px;
+    height: 35px;
+    font-size: 15px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.contact-bt:hover , .follow-bt:hover{
+    transform: scale(1.1,1.1);
+}
+
+.contact-bt{
+    background-color: rgb(255,255,255,0.9);
+    border: 3px solid rgb(231, 76, 60,0.8);
+    border-radius: 99px;
+    font-weight: 600;
+    color: rgb(231, 76, 60,0.9);
+    cursor: pointer;
+}
+
+.follow-bt{
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 99px;
+    font-weight: 600;
+    background-image: linear-gradient(to right,rgb(231, 76, 60,0.6),rgb(243, 156, 18,0.9));
+    border: none;
+    color: rgb(255,255,255,0.9);
+}
+
+
+
+.more{
+
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px 0px;
+}
+
+.m1{
+    animation-name: top;
+    animation-duration: 1s;
+}
+
+.m2{
+    animation-name: top;
+    animation-duration: 2s;
+}
+
+.m3{
+    animation-name: top;
+    animation-duration: 3s;
+}
+
+
+
+.more-icon{
+    font-size: 35px;
+    color: rgb(255,255,255,0.9);
+    text-shadow: 2px 3px 3px rgb(0,0,0,0.2);
+}
+
+.span-more{
+    width: 30%;
+    background-image: linear-gradient(to top,rgb(231, 76, 60,0.9),rgb(243, 156, 18,0.6));
+    text-align: center;
+    padding: 10px;
+    height: 90px;
+    color: rgb(255,255,255,0.9);
+    font-size: 15px;
+    border-radius: 10px;
+    text-shadow: 2px 3px 3px rgb(0,0,0,0.2);
+    box-shadow: 2px 3px 3px rgb(0,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+
+
+.span-more p{
+    margin-top: 7px;
+    
+}
+
+.list-contact{
+    width: 100%;
+    padding: 10px;
+}
+
+.ct-bt i{
+    font-size: 25px;
+    vertical-align: middle;
+}
+
+.ct-bt{
+    width: 100%;
+    height: 35px;
+    border-radius: 99px;
+    margin-bottom: 10px;
+    color: rgb(255,255,255,0.9);
+    background-color: rgb(125, 60, 152,0.8);
+    border: none;
+    background-image: linear-gradient(to right,rgb(231, 76, 60,0.6),rgb(243, 156, 18,0.9));
+    font-family: 'Comfortaa', cursive;
+    font-size: 15px;
+    transition: 0.3s;
+    box-shadow: 2px 3px 3px rgb(0,0,0,0.3);
+    text-shadow: 2px 3px 3px rgb(0,0,0,0.5);
+}
+
+
+
+.b1{
+    animation-name: left;
+    animation-duration: 4s;
+}
+
+.b2{
+    animation-name: left;
+    animation-duration: 3s;
+}
+
+.b3{
+    animation-name: left;
+    animation-duration: 2s;
+}
+
+.b4{
+    animation-name: left;
+    animation-duration: 1s;
+}
+
+.ct-bt:hover{
+    transform: scale(1.1,1.1);
+}
+
+.last-p{
+    text-align: center;
+    color: rgb(231, 76, 60,0.8);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+
+
+@keyframes bottoms{
+    0%{
+        opacity: 0;
+        transform: translate(0,-100px);
+    }
+
+
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+@keyframes top{
+        0%{
+            opacity: 0;
+            transform: translate(0,+100px);
+        }
+    
+    
+        100%{
+            opacity: 1;
+            transform: translate(0,0);
+        }
+}
+
+@keyframes right{
+    0%{
+        opacity: 0;
+        transform: translate(+100px,0);
+    }
+
+
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+@keyframes left{
+    0%{
+        opacity: 0;
+        transform: translate(-100px,0);
+    }
+
+
+    100%{
+        opacity: 1;
+        transform: translate(0,0);
+    }
+}
+
+/* iphone 6/7/8 */
+@media screen  and (min-width:375px){
+    .img-bg{
+        height: 220px;
+    }
+
+    .img-pr{
+        top: 130px;
+    }
+
+
+    .name{
+        height: 100px;
+    }
+
+    .number{
+        left: 10px;
+        bottom: -5px;
+    }
+
+    .contact-bt , .follow-bt{
+        width: 160px;
+    }
+
+    .nick-name{
+        top: 30PX;
+    }
+}
+
+/* iphone 6/7/8 plus */
+@media screen  and (min-width:414px){
+    .number{
+        bottom: -7px;
+    }
+
+    .contact-bt , .follow-bt{
+        width: 180px;
+    }
+}
+
+/* iphone x */
+@media screen  and (min-height:812px){
+    .img-bg{
+        height: 250px;
+    }
+
+    .img-pr{
+        top: 160px;
+    }
+
+    .contact-bt , .follow-bt{
+        width: 170px;
+    }
+
+    .span-more{
+        height: 100px;
+    }
+}
+
+/* Small tablet */
+@media screen  and (min-width:600px){
+
+    .img-pr{
+        left: 37%;
+    }
+
+    .ct-bt{
+        height: 40px;
+    }
+
+    .contact-bt , .follow-bt{
+        width: 180px;
+    }
+
+    .follow-bt{
+        margin-left: 15px;
+    }
+}
+
+/* ipad */
+@media screen  and (min-width:768px){
+    .img-bg{
+        height: 330px;
+    }
+
+    .name{
+        height: 130px;
+    }
+
+    .img-pr{
+        top: 220px;
+        left: 40%;
+        width: 200px;
+        height: 200px;
+    }
+
+    .contact-bt , .follow-bt{
+        width: 230px;
+    }
+
+    .follow-bt{
+        margin-left: 25px;
+    }
+
+    .ct-bt{
+        height: 52px;
+        border-radius: 10px;
+    }
+
+    .full-name{
+        font-size: 50px;
+    }
+
+    .nick-name{
+        font-size: 65px;
+    }
+
+    
 }
